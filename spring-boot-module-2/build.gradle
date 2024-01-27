@@ -1,0 +1,17 @@
+plugins {
+
+    id "org.springframework.boot" version "$springBootVersion"
+}
+
+group = 'com.example.spring-boot-module-2'
+
+dependencies {
+    implementation ('org.springframework.boot:spring-boot-starter-web') {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+    }
+    implementation ('org.springframework.boot:spring-boot-starter-tomcat:2.7.14')
+    implementation 'org.apache.commons:commons-lang3' // Note : using without version.
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
